@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome, <span id="username-display"></span>!</h1>
+  <p>You have successfully logged into <br>ISAAC's Tic tak Game.</p>
+
+
+
+
+
+
+  <button id="logout-button">Log Out</button>
+
+  <script>
+    // When the logout button is clicked, clear localStorage and redirect to the login page
+    document.getElementById('logout-button').addEventListener('click', function() {
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
+        localStorage.removeItem('name');
+        window.location.href = 'signup.html'; // Redirect to login page (adjust the path accordingly)
+    });
+  </script>
+  
+
+
+
+
+
+
+
+  <script>
+    // Retrieve the logged-in user from localStorage
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    
+    if (loggedInUser) {
+        // Display the user's name
+        document.getElementById('username-display').textContent = loggedInUser.username;
+    } else {
+        alert('Please log in first.');
+        window.location.href = 'signup.html'; // Redirect to the login page
+    }
+  </script>
+
+</body>
+</html>

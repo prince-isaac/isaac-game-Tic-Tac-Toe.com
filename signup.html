@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Login Form -->
+    <div class="login-form">
+      <h2>Login</h2>
+      <form id="login-form" aria-labelledby="login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required aria-describedby="username-help">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required aria-describedby="password-help">
+        
+        <button type="submit" id="submit" aria-label="Submit Login">Login</button>
+        <div id="login-error" class="error-message" style="display: none;">Invalid username or password!</div>
+      </form>
+      <p>Don't have an account? <a href="#" id="signup-link">Sign up</a></p>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="signup-form" id="signup-form" style="display: none;">
+      <h2>Sign Up</h2>
+      <form id="signup" aria-labelledby="signup-form">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" placeholder="Enter your full name" required>
+
+        <label for="signup-username">Username</label>
+        <input type="text" id="signup-username" placeholder="Choose a username" required>
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="Choose a password" required>
+        
+        <div class="password-info" id="password-info">
+          <ul>
+            <li id="lowercase">At least one lowercase letter (a-z)</li>
+            <li id="uppercase">At least one uppercase letter (A-Z)</li>
+            <li id="number">At least one number (0-9)</li>
+            <li id="length">At least 6 characters long</li>
+          </ul>
+        </div>
+
+        <button type="submit" id="signup-submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+      <div id="signup-success" style="display: none;">Sign-up successful! Redirecting to login...</div>
+    </div>
+  </div>
+
+  <script src="style.js"></script>
+</body>
+</html>

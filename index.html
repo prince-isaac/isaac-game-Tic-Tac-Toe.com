@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WELCOME TO ISAAC GAMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+<body>
+
+    
+
+    <!-- Scoreboard Section (Tabulated) -->
+    <div id="scoreboard">
+        <h2>Scoreboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Player X</td>
+                    <td id="player-x-wins">0</td>
+                    <td id="player-x-losses">0</td>
+                    <td id="player-x-draws">0</td>
+                </tr>
+                <tr>
+                    <td>Player O</td>
+                    <td id="player-o-wins">0</td>
+                    <td id="player-o-losses">0</td>
+                    <td id="player-o-draws">0</td>
+                </tr>
+                <tr>
+                    <td>Draws</td>
+                    <td colspan="3" id="total-draws">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="game-container">
+        <h1>Tic Tac Toe</h1>
+        <div id="cell-container">
+            <div cellIndex="0" class="cell"></div>
+            <div cellIndex="1" class="cell"></div>
+            <div cellIndex="2" class="cell"></div>
+            <div cellIndex="3" class="cell"></div>
+            <div cellIndex="4" class="cell"></div>
+            <div cellIndex="5" class="cell"></div>
+            <div cellIndex="6" class="cell"></div>
+            <div cellIndex="7" class="cell"></div>
+            <div cellIndex="8" class="cell"></div>
+        </div>
+        <h2 id="statustext"></h2>
+        <button id="Restart">Restart</button>
+    </div>
+
+
+    <script src="isaAC.js"></script>
+</body>
+</html>
