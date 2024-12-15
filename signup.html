@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="signup.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WELCOME TO ISAAC GAMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 </head>
 <body>
 
-  <div class="login-container">
-    <!-- Login Form -->
-    <div class="login-form">
-      <h2>Login</h2>
-      <form id="login-form" aria-labelledby="login-form">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required aria-describedby="username-help">
+    
 
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required aria-describedby="password-help">
-        
-        <button type="submit" id="submit" aria-label="Submit Login">Login</button>
-        <div id="login-error" class="error-message" style="display: none;">Invalid username or password!</div>
-      </form>
-      <p>Don't have an account? <a href="#" id="signup-link">Sign up</a></p>
+    <!-- Scoreboard Section (Tabulated) -->
+    <div id="scoreboard">
+        <h2>Scoreboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Player X</td>
+                    <td id="player-x-wins">0</td>
+                    <td id="player-x-losses">0</td>
+                    <td id="player-x-draws">0</td>
+                </tr>
+                <tr>
+                    <td>Player O</td>
+                    <td id="player-o-wins">0</td>
+                    <td id="player-o-losses">0</td>
+                    <td id="player-o-draws">0</td>
+                </tr>
+                <tr>
+                    <td>Draws</td>
+                    <td colspan="3" id="total-draws">0</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <!-- Signup Form -->
-    <div class="signup-form" id="signup-form" style="display: none;">
-      <h2>Sign Up</h2>
-      <form id="signup" aria-labelledby="signup-form">
-        <label for="signup-name">Full Name</label>
-        <input type="text" id="signup-name" placeholder="Enter your full name" required>
-
-        <label for="signup-username">Username</label>
-        <input type="text" id="signup-username" placeholder="Choose a username" required>
-
-        <label for="signup-password">Password</label>
-        <input type="password" id="signup-password" placeholder="Choose a password" required>
-        
-        <div class="password-info" id="password-info">
-          <ul>
-            <li id="lowercase">At least one lowercase letter (a-z)</li>
-            <li id="uppercase">At least one uppercase letter (A-Z)</li>
-            <li id="number">At least one number (0-9)</li>
-            <li id="length">At least 6 characters long</li>
-          </ul>
+    <div id="game-container">
+        <h1>Tic Tac Toe</h1>
+        <div id="cell-container">
+            <div cellIndex="0" class="cell"></div>
+            <div cellIndex="1" class="cell"></div>
+            <div cellIndex="2" class="cell"></div>
+            <div cellIndex="3" class="cell"></div>
+            <div cellIndex="4" class="cell"></div>
+            <div cellIndex="5" class="cell"></div>
+            <div cellIndex="6" class="cell"></div>
+            <div cellIndex="7" class="cell"></div>
+            <div cellIndex="8" class="cell"></div>
         </div>
-
-        <button type="submit" id="signup-submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <a href="#" id="login-link">Login</a></p>
-      <div id="signup-success" style="display: none;">Sign-up successful! Redirecting to login...</div>
+        <h2 id="statustext"></h2>
+        <button id="Restart">Restart</button>
     </div>
-  </div>
 
-  <script src="style.js"></script>
+
+    <script src="isaAC.js"></script>
+
+    <button id="logout-button">Log Out</button>
+
+    <script>
+      // When the logout button is clicked, clear localStorage and redirect to the login page
+      document.getElementById('logout-button').addEventListener('click', function() {
+          localStorage.removeItem('username');
+          localStorage.removeItem('password');
+          localStorage.removeItem('name');
+          window.location.href = 'signup.html'; // Redirect to login page (adjust the path accordingly)
+      });
+    </script>
+    
+
 </body>
 </html>

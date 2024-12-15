@@ -44,7 +44,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
 
     if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user)); // Store the current user
-        window.location.href = 'welcome.html'; // Redirect to welcome page
+        window.location.href = 'index.html'; // Redirect to welcome page
     } else {
         document.getElementById('login-error').style.display = 'block'; // Show error message
     }
