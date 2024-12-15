@@ -1,0 +1,11 @@
+[33mcommit e4eff81b4c55e0bdbe3a66f2ebb2c4237ead02e8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: prince-isaac <princeisaac068@gmail.com>
+Date:   Sun Dec 15 16:51:51 2024 +0100
+
+    Renamed index.html to signup.html and vice versa
+
+[33mcommit 25d295d837b4026ff04444760899d532f1a90a29[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: prince-isaac <princeisaac068@gmail.com>
+Date:   Sun Dec 15 09:40:07 2024 +0100
+
+    Initial commit
