@@ -23,7 +23,10 @@ let draws = 0;
 initializeGame();
 
 function initializeGame() {
-    cells.forEach(cell => cell.addEventListener("click", cellClicked));
+    cells.forEach((cell, index) => {
+        cell.setAttribute("cellIndex", index); // Set cellIndex dynamically
+        cell.addEventListener("click", cellClicked);
+    });
     restartBtn.addEventListener("click", restartGame);
     statustext.textContent = `${currentPlayer}'s turn`;
     running = true;
@@ -82,6 +85,7 @@ function checkWinner() {
         statustext.textContent = "It's a draw!";
         draws++;
         updateDraws();
+        cells.forEach(cell => cell.classList.add('draw-cell')); // Highlight draw
         running = false;
     } else {
         changePlayer();
@@ -90,17 +94,19 @@ function checkWinner() {
 
 function highlightWinningLine(winningCondition) {
     winningCondition.forEach(index => {
-        cells[index].style.backgroundColor = "#4CAF50"; // Green highlight
+        cells[index].classList.add('winning-cell'); // Add CSS class for winning cells
     });
 }
 
 function updateScore() {
     if (currentPlayer === "x") {
         playerXWins++;
+        playerOWins++;  // Player O loses
         document.getElementById('player-x-wins').textContent = playerXWins;
         document.getElementById('player-o-losses').textContent = playerOWins;
     } else {
         playerOWins++;
+        playerXWins++;  // Player X loses
         document.getElementById('player-o-wins').textContent = playerOWins;
         document.getElementById('player-x-losses').textContent = playerXWins;
     }
@@ -125,6 +131,8 @@ function restartGame() {
 
     cells.forEach(cell => {
         cell.textContent = "";
+        cell.classList.remove('winning-cell'); // Remove winning class
+        cell.classList.remove('draw-cell');   // Remove draw class
         cell.style.backgroundColor = "#e0e0e0"; // Reset color
     });
 }

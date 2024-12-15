@@ -44,7 +44,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
 
     if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user)); // Store the current user
-        window.location.href = 'signup.html'; // Redirect to the welcome page
+        window.location.href = 'signup.html'; // Redirect to the welcome page (fix here)
     } else {
         document.getElementById('login-error').style.display = 'block'; // Show error message
     }
@@ -78,6 +78,9 @@ document.getElementById('signup').addEventListener('submit', function (event) {
 
     // Save users to localStorage
     localStorage.setItem('users', JSON.stringify(users));
+
+    // Save the username for future auto-fill
+    localStorage.setItem('signupUsername', username);
 
     document.getElementById('signup-success').style.display = 'block'; // Show success message
 
